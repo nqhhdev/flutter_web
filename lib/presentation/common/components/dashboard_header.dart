@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dashboard_ui/config/responsive.dart';
-import 'package:responsive_dashboard_ui/style/colors.dart';
-import 'package:responsive_dashboard_ui/style/style.dart';
+import 'package:flutter_web/app/app.dart';
+import 'package:flutter_web/presentation/common/components/style.dart';
+
+import '../responsive.dart';
 
 class DashboardHeader extends StatelessWidget {
   const DashboardHeader({
@@ -23,7 +24,7 @@ class DashboardHeader extends StatelessWidget {
             PrimaryText(
               text: 'Payments Updates',
               size: 16,
-              color: AppColors.secondary,
+              color: ColorsManager.bgColor,
             ),
           ],
         ),
@@ -35,16 +36,16 @@ class DashboardHeader extends StatelessWidget {
             flex: 1,
             child: TextField(
               decoration: InputDecoration(
-                fillColor: AppColors.white,
+                fillColor: ColorsManager.white,
                 filled: true,
                 contentPadding: const EdgeInsets.only(left: 40, right: 50),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: const BorderSide(color: AppColors.white),
+                  borderSide: const BorderSide(color: ColorsManager.white),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
-                  borderSide: const BorderSide(color: AppColors.white),
+                  borderSide: const BorderSide(color: ColorsManager.white),
                 ),
                 prefixIcon: const Icon(
                   Icons.search,
@@ -52,7 +53,7 @@ class DashboardHeader extends StatelessWidget {
                 ),
                 hintText: 'Search',
                 hintStyle: const TextStyle(
-                  color: AppColors.secondary,
+                  color: ColorsManager.bgColor,
                   fontSize: 14.0,
                 ),
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_dashboard_ui/style/colors.dart';
-import 'package:responsive_dashboard_ui/style/style.dart';
+import 'package:flutter_web/app/app.dart';
+import 'package:flutter_web/presentation/common/components/style.dart';
 
 class PaymentListTile extends StatelessWidget {
   final String? icon;
@@ -23,7 +23,7 @@ class PaymentListTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         width: 50,
         decoration: BoxDecoration(
-          color: AppColors.white,
+          color: ColorsManager.white,
           borderRadius: BorderRadius.circular(20),
         ),
         child: SvgPicture.asset(
@@ -39,12 +39,12 @@ class PaymentListTile extends StatelessWidget {
       subtitle: const PrimaryText(
         text: 'Successful',
         size: 12,
-        color: AppColors.secondary,
+        color: ColorsManager.bgColor,
       ),
       trailing: PrimaryText(
         text: amount!,
         size: 16,
-        color: AppColors.black,
+        color: ColorsManager.black,
         fontWeight: FontWeight.bold,
       ),
     );

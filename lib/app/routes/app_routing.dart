@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/presentation/dashboard/dashboard_route.dart';
 
+import '../../presentation/change_password/change_password_route.dart';
+import '../../presentation/forgot_pasword/forgot_password_screen_route.dart';
 import '../../presentation/login/login_screen_route.dart';
 import '../../presentation/signup/signup_screen_route.dart';
 import '../../presentation/splash/splash_screen.dart';
@@ -10,13 +13,8 @@ enum RouteDefine {
   loginScreen,
   signUpScreen,
   dashboard,
-  transaction,
-  task,
-  documents,
-  store,
-  notification,
-  profile,
-  setting,
+  forgotPassword,
+  changePassword,
 }
 
 class AppRouting {
@@ -25,6 +23,9 @@ class AppRouting {
       RouteDefine.splashScreen.name: (_) => SplashScreenRoute.route,
       RouteDefine.loginScreen.name: (_) => LoginScreenRoute.route,
       RouteDefine.signUpScreen.name: (_) => SignUpScreenRoute.route,
+      RouteDefine.dashboard.name: (_) => DashBoardRoute.route,
+      RouteDefine.forgotPassword.name: (_) => ForgotPasswordScreenRoute.route,
+      RouteDefine.changePassword.name: (_) => ChangePasswordScreenRoute.route,
     };
 
     final routeBuilder = routes[settings.name];

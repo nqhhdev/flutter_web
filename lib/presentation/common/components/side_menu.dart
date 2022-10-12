@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_dashboard_ui/config/responsive.dart';
-import 'package:responsive_dashboard_ui/config/size_config.dart';
-import 'package:responsive_dashboard_ui/style/colors.dart';
+import 'package:flutter_web/app/app.dart';
+
+import '../../../app/routes/app_routing.dart';
+import '../responsive.dart';
+import '../size_config.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -15,7 +18,7 @@ class SideMenu extends StatelessWidget {
       elevation: 2,
       child: Container(
         height: SizeConfig.screenHeight,
-        color: AppColors.secondaryBg,
+        color: ColorsManager.white,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -38,6 +41,28 @@ class SideMenu extends StatelessWidget {
               iconBuilder(assetName: 'assets/credit-card.svg'),
               iconBuilder(assetName: 'assets/trophy.svg'),
               iconBuilder(assetName: 'assets/invoice.svg'),
+              IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, RouteDefine.changePassword.name);
+                },
+                icon: Icon(Icons.change_circle_outlined),
+                iconSize: 20,
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+              ),
+              IconButton(
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+
+                  // ignore: use_build_context_synchronously
+                  Navigator.pushReplacementNamed(
+                    context,
+                    RouteDefine.loginScreen.name,
+                  );
+                },
+                icon: Icon(Icons.logout),
+                iconSize: 20,
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+              )
             ],
           ),
         ),
@@ -51,7 +76,10 @@ iconBuilder({
 }) =>
     IconButton(
       onPressed: () {},
-      icon: SvgPicture.asset(assetName),
+      icon: SvgPicture.asset(
+        assetName,
+        color: ColorsManager.bgColor,
+      ),
       iconSize: 20,
       padding: const EdgeInsets.symmetric(vertical: 20.0),
     );

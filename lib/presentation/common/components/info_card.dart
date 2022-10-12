@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_dashboard_ui/config/responsive.dart';
-import 'package:responsive_dashboard_ui/config/size_config.dart';
-import 'package:responsive_dashboard_ui/style/colors.dart';
-import 'package:responsive_dashboard_ui/style/style.dart';
+import 'package:flutter_web/app/app.dart';
+import 'package:flutter_web/presentation/common/components/style.dart';
+
+import '../responsive.dart';
+import '../size_config.dart';
 
 class InfoCard extends StatelessWidget {
   final String? icon;
@@ -39,7 +40,7 @@ class InfoCard extends StatelessWidget {
            PrimaryText(
             text: label!,
             size:Responsive.isDesktop(context) ? 16 : 14,
-            color: AppColors.secondary,
+            color: ColorsManager.bgColor,
           ),
           SizedBox(
             height: SizeConfig.blockSizeHorizontal! * 1,

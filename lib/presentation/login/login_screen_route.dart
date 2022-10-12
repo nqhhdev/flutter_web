@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_web/presentation/login/bloc/login_bloc.dart';
+import 'package:flutter_web/presentation/login/bloc/log_in_bloc.dart';
 import 'package:flutter_web/presentation/login/ui/login_screen.dart';
 
 import '../../app/app.dart';

@@ -1,6 +1,7 @@
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web/app/app.dart';
 
 import '../responsive.dart';
 
@@ -87,7 +88,7 @@ class BarChartComponent extends StatelessWidget {
             colors: [Colors.black],
             width: Responsive.isDesktop( context) ? 40 : 14,
             backDrawRodData: BackgroundBarChartRodData(
-                y: 90, show: true, colors: [AppColors.barBg]),
+                y: 90, show: true, colors: [ColorsManager.bgColor]),
           ),
         ],
       );

@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web/app/app.dart';
 import 'package:flutter_web/presentation/common/textfield/common_text_form_field.dart';
-import 'package:flutter_web/presentation/login/bloc/login_bloc.dart';
 
 import '../../../app/routes/app_routing.dart';
 import '../../common/common_elevated_button.dart';
 import '../../common/dialog/loading_dialog.dart';
 import '../../common/dont_have_an_account.dart';
+import '../bloc/log_in_bloc.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -131,7 +131,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             SizedBox(height: 15.h),
                             TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, RouteDefine.forgotPassword.name);
+                                },
                                 child: Text(
                                   "Forgot Password",
                                   style: StyleManager.label13
